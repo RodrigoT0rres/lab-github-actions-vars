@@ -32,13 +32,10 @@ jobs:
           # Exemplo: echo "Repositorio: $GITHUB_REPOSITORY"
            echo "O usuario $GITHUB_ACTOR disparou este workflow no repositorio $GITHUB_REPOSITORY. O sistema operacional do runner e $RUNNER_OS."
       - name: "Passo 4: Gerar Codigo Dinamico"
-        id: gerar_codigo
-        run: |
-          # TODO: Gere um numero aleatorio e o salve em GITHUB_ENV como BUILD_HASH
-          # Exemplo: RANDOM_NUM=$RANDOM
-          echo "BUILD_HASH=$RANDOM_NUM" >> $GITHUB_ENV
-          echo "BUILD_HASH=VALOR_GERADO_AQUI" >> $GITHUB_ENV # Placeholder
-
+  id: gerar_codigo
+  run: |
+    RANDOM_NUM=$RANDOM
+    echo "BUILD_HASH=$RANDOM_NUM" >> $GITHUB_ENV
       - name: "Passo 5: Usar Codigo Dinamico"
         run: |
           # TODO: Imprima o BUILD_HASH gerado no passo anterior
